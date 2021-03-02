@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import { Form, Row, Col, Button } from 'react-bootstrap';
+
 import styled from '@emotion/styled';
 import { css } from '@emotion/css'
 
@@ -53,11 +55,6 @@ const Formulario = () => {
     const toggleSubmit = e => {
         e.preventDefault();
         setActivo(true);
-        setForm({
-            marca : 'Americano',
-            year : '2014',
-            plan : 'basico'
-        })
     } 
 
     return ( 
