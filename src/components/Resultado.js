@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
@@ -26,7 +27,7 @@ const Resultado = ({ form }) => {
         resultado *= calcularIncrementoMarca(marca);
         resultado = parseFloat( calcularIncrementoPlan(plan) * resultado).toFixed(2);
         setCosto(resultado);
-    });
+    }, [marca, year, plan]);
 
     return ( 
         <Container>
@@ -78,5 +79,9 @@ const Resultado = ({ form }) => {
         </Container>
      );
 }
- 
+
+Resultado.propTypes = {
+    form : PropTypes.object.isRequired
+}
+
 export default Resultado;
